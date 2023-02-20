@@ -6,5 +6,5 @@
 ```
 git clone https://github.com/Vinx911/dwm_script.git ~/.dwm
 
-echo export DWM_PATH=~/.dwm >> ~/.profile
+echo "export DWM_PATH=~/.dwm" >> ~/.profile
 ```
