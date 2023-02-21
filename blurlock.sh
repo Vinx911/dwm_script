@@ -15,8 +15,8 @@ i3lock \
     --redraw-thread \
     --clock \
     --force-clock \
-    --ind-pos w/2:h/2+80 \
-    --time-pos w/2:h/2-40 \
+    --ind-pos x+w/2:y+h/2+80 \
+    --time-pos x+w/2:y+h/2-40 \
     --date-pos tx:ty+60 \
     --time-color ffffffff \
     --date-color ffffffff \

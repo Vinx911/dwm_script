@@ -11,12 +11,13 @@ settings() {
 
 daemons() {
     [ $1 ] && sleep $1
-    xfce4-power-manager &
+    xfce4-power-manager &                      # 电源管理器
+    xfce4-clipman &                            # 剪切板
+    /usr/lib/xfce-polkit/xfce-polkit &         # sudo提权
     $DWM_PATH/statusbar/statusbar.sh cron &    # 开启状态栏定时更新
     xss-lock -- $DWM_PATH/blurlock.sh &        # 开启自动锁屏程序
     fcitx5 &                                   # 开启输入法
     lemonade server &                          # 开启lemonade 远程剪切板支持
-    flameshot &                                # 截图要跑一个程序在后台 不然无法将截图保存到剪贴板
     dunst -conf $DWM_PATH/dunst/dunst.conf &   # 开启通知server
     picom --config $DWM_PATH/picom/picom.conf >> /dev/null 2>&1 & # 开启picom
 }
