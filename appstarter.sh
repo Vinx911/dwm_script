@@ -6,7 +6,7 @@ source ~/.profile
 case $1 in
     terminal) st ;;
     scratchpad) st -t scratchpad -c float ;;
-    filemanager) nemo ;;
+    filemanager) thunar ;;
     browser) google-chrome-stable ;;
     # music) st ;;
     # video) st ;;
