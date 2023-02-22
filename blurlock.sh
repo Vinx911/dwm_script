@@ -1,8 +1,14 @@
 #! /bin/bash
 # 依赖包： i3lock-color
 
+pngFiles=(~/Pictures/wallpaper/*.png)
+jpgFiles=(~/Pictures/wallpaper/*.jpg)
+picFiles=(${pngFiles[@]} ${jpgFiles[@]})
+randomBg=$(printf "%s\n" "${picFiles[RANDOM % ${#picFiles[@]}]}")
+
 i3lock \
-    --blur 10 \
+    --image $randomBg \
+    --fill \
     --bar-indicator \
     --bar-pos y+h \
     --bar-direction 1 \
