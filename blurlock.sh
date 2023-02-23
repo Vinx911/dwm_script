@@ -1,9 +1,7 @@
 #! /bin/bash
 # 依赖包： i3lock-color
 
-pngFiles=(~/Pictures/wallpaper/*.png)
-jpgFiles=(~/Pictures/wallpaper/*.jpg)
-picFiles=(${pngFiles[@]} ${jpgFiles[@]})
+picFiles=(~/Pictures/wallpaper/*.{png,jpg})
 randomBg=$(printf "%s\n" "${picFiles[RANDOM % ${#picFiles[@]}]}")
 
 i3lock \
