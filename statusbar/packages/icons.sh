@@ -8,9 +8,9 @@ color="^c#2D1B46^^b#5555660x66^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
-    icons=("")
-    [ "$(bluetoothctl info 88:C9:E8:14:2A:72 | grep 'Connected: yes')" ] && icons=(${icons[@]} "")
-    [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
+    icons=("󰍜")
+    [ "$(bluetoothctl info 88:C9:E8:14:2A:72 | grep 'Connected: yes')" ] && icons=(${icons[@]} "󰋋")
+    [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "󰠺")
 
     text=" ${icons[@]} "
 
@@ -21,15 +21,15 @@ update() {
 notify() {
     texts=""
 #    [ "$(sudo docker ps | grep 'v2raya')" ] && texts="$texts\n v2raya 已启动"
-#    [ "$(bluetoothctl info 88:C9:E8:14:2A:72 | grep 'Connected: yes')" ] && texts="$texts\n WH-1000XM4 已链接"
-    [ "$texts" != "" ] && notify-send " Info" "$texts" -r 9527
+#    [ "$(bluetoothctl info 88:C9:E8:14:2A:72 | grep 'Connected: yes')" ] && texts="$texts\n󰋋 WH-1000XM4 已链接"
+    [ "$texts" != "" ] && notify-send "󰍜 Info" "$texts" -r 9527
 }
 
 call_menu() {
-    case $(echo -e ' 关机\n 重启\n 休眠\n 锁定' | rofi -dmenu -window-title power -theme $DWM_PATH/rofi/rofi_ps.rasi) in
+    case $(echo -e ' 关机\n 重启\n󰄉 休眠\n 锁定' | rofi -dmenu -window-title power -theme $DWM_PATH/rofi/rofi_ps.rasi) in
         " 关机") poweroff ;;
         " 重启") reboot ;;
-        " 休眠") systemctl hibernate ;;
+        "󰄉 休眠") systemctl hibernate ;;
         " 锁定") $DWM_PATH/blurlock.sh ;;
     esac
 }

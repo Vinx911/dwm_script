@@ -8,7 +8,7 @@ text_color="^c#000080^^b#3870560x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
-    wifi_icon="褐"
+    wifi_icon="󰌹"
     wifi_text=$(nmcli | grep 已连接 | awk '{print $3}')
     [ "$wifi_text" = "" ] && wifi_text="未连接"
 
